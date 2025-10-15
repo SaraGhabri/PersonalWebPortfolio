@@ -28,17 +28,13 @@ const Navbar = () => {
           }}
         >
           <img
-            src={logo}
-            alt="logo"
-            className="w-9 h-9 
-            object-contain"
+            src={logo} alt="logo" className="w-9 h-9 object-contain"
           />
           <p
             className="text-white text-[18px]
-            font-bold cursor-pointer"
-          >
-            Sarah
-            <span className="sm:block hidden">|Ghabri</span>
+            font-bold cursor-pointer flex">
+            Sarah &nbsp;
+            <span className="sm:block hidden">| Ghabri</span>
           </p>
         </Link>
         <ul className="list-none hidden sm:flex 
