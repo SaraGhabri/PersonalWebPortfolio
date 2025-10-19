@@ -1,23 +1,15 @@
-import {Suspense, useEffect, useState} from 'react'
-//empty canvas to allow us place smth on it
-import { Canvas } from '@react-three/fiber'
-//helpers to draw on the canvas the 3d model : useGLTF to load the model
-//  OrbitControls to move around the model, Preload to load the model before displaying it
-import{ OrbitControls, Preload, useGLTF } from '@react-three/drei'
-import CanvasLoader from '../Loader'
+import React, { Suspense, useEffect, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
+import CanvasLoader from "../Loader";
 
-const Computers = () => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");  return (
-    //to create 3js element, we use mesh not div
-    //to add light to mesh to see it : hemisphereLight, pointLight, spotLight
-    //to add texture to the model : use useGLTF hook to load the model
-    // and add it to the scene using primitive component
-    // to adjust the position, rotation, scale of the model : use scale, position, rotation props
-    //to make it responsive : use media query to detect screen size and adjust scale and position accordingly
-     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1} />
+const Computers = ({ isMobile }) => {
+  const computer = useGLTF("./desktop_pc/scene.gltf");
+
+  return (
+    <mesh>
+      <hemisphereLight intensity={0.15} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -26,46 +18,61 @@ const Computers = () => {
         castShadow
         shadow-mapSize={1024}
       />
-      <primitive 
-        object={computer.scene} 
-        scale={0.7}
-        position={[0, -4, -2]}
+      <pointLight intensity={1} />
+      <primitive
+        object={computer.scene}
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -2.2] : [0, -4, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
-
-      
       />
-  
- 
     </mesh>
   );
 };
 
 const ComputersCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <Canvas
-      frameloop="demand"
+      frameloop='demand'
       shadows
-      //camera : where are we looking at this model from 
-      //fov : field of view, how much of the scene we can see
+      dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      //gl property : to enable antialiasing to make the model look smoother
       gl={{ preserveDrawingBuffer: true }}
     >
-      
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers />
+        <Computers isMobile={isMobile} />
       </Suspense>
 
-
-      
       <Preload all />
     </Canvas>
   );
 };
 
-export default Computers
+export default ComputersCanvas;
