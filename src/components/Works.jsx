@@ -84,10 +84,7 @@ const Works = () => {
           and experience through real-world
           examples of my work. Each project is
           briefly described with links to code
-          repositories. It reflects my ability to solve
-          problems, work with different
-          technologies, and manage projects
-          effectively. Still eager to learn and 
+          repositories. Still eager to learn and 
           enhance my skills and work.
         </motion.p>
       </div> 

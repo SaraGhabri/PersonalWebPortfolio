@@ -6,8 +6,12 @@ import {
   javascript,
   typescript,
   html,
+  B2M,
+  Lasmap,
+  ozsayin,
   css,
   reactjs,
+  ozsayinweb,
   redux,
   tailwind,
   nodejs,
@@ -15,10 +19,6 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
@@ -46,11 +46,11 @@ const services = [
     icon: web,
   },
   {
-    title: "Frontend Developer",
+    title: "DevOps Enthusiast",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Automation Learner",
     icon: backend,
   },
   {
@@ -118,109 +118,85 @@ const experiences = [
   {
     title: "AI Medical Research Intern",
     company_name: "LASMAP",
-    icon: starbucks,
+    icon: Lasmap,
     iconBg: "#383E56",
     date: "Jun 2025 - Sep 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Researching MRD and AI in healthcare, analyzing clinical and biological datasets to support feature delivery in predictive health software.",
+      "Engineering features, cleaning data, and applying ML algorithms for disease prediction, contributing to software upgrades that enhance accuracy.",
+      "Building, evaluating, and optimizing predictive models (Python, Scikit-learn) using metrics such as accuracy and AUC to improve user interface insights for clinicians.",
     ],
   },
   {
     title: "Frontend Development Intern",
     company_name: "Ozsayin HVAC Technologies",
-    icon: tesla,
+    icon: ozsayin,
     iconBg: "#E6DEDD",
     date: "Aug 2025 - Sep 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Built and optimized company’s main web interface with React.js, TailwindCSS, Framer Motion, ensuring secure data flows and UI validation.",
+      "Designed modular components and enforced input validation rules to enhance client-side data integrity.",
+      "Collaborated cross-functionally to document UI/UX flows and ensure alignment with backend data constraints.",
     ],
   },
   {
     title: "Backend Developer Intern",
     company_name: "B2M-IT",
-    icon: shopify,
+    icon: B2M,
     iconBg: "#383E56",
     date: "Jul 2024 - Aug 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed microservices using Spring Boot, incorporating authentication, authorization, and secure endpoints (REST, GraphQL).",
+      "Applied core software architecture principles using REST & GraphQL APIs.",
+      "Familiar with Spring Security and CI/CD concepts."
     ],
   },
   
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
+
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Microservices Content Moderation System",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A scalable microservices-based content moderation platform that automatically detects and classifies inappropriate content using REST, GraphQL, Kafka, gRPC, and Docker.",
     tags: [
       {
-        name: "react",
+        name: "REST",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Kafka",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "gRPC",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Docker",
+        color: "white-text-gradient",
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/SaraGhabri/Content-Moderation-Platform-MircoservicesProject.git",
   },
   {
-    name: "Job IT",
+    name: "Diabetic Kidney Disease Predictive Model",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Classification models for medical datasets, improving diagnostic insights for Diabetic Kidney Diseases early detection.‌",
     tags: [
       {
-        name: "react",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Scikit-learn",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Albuminurie",
         color: "pink-text-gradient",
       },
     ],
@@ -228,20 +204,41 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Ozsayin HVAC Technologies Website",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A responsive, component-based frontend for the company’s website using React.js and TailwindCSS.‌Ensuring scalable structure via Git feature‌ branching.",
     tags: [
       {
-        name: "nextjs",
+        name: "reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "tailwindcss",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "github-actions",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ozsayinweb,
+    source_code_link: "https://github.com/SaraGhabri/ozsayin-frontend.git",
+  },
+  {
+    name: "Product Management Store",
+    description:
+      "A role-based web application with authentication, CRUD operations, and session-based access control.‌",
+    tags: [
+      {
+        name: "JAVA",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Servlets/JSP",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Maven",
         color: "pink-text-gradient",
       },
     ],
@@ -250,4 +247,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
